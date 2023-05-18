@@ -50,7 +50,7 @@ The instructions were:
 Clone the project
 
 ```terminal
-  git clone 
+  git clone https://github.com/Ayngie/noa-code-exercise.git
 ```
 
 Go to the project directory
