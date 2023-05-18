@@ -2,7 +2,7 @@ import { CodeExerciseApp } from "./components/CodeExerciseApp";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <CodeExerciseApp />
     </div>
   );

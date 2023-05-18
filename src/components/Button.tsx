@@ -9,7 +9,6 @@ export const Button = ({ symbol, text }: IButtonProps) => {
         <span className="btn-symbol">{symbol}</span>
         <span className="btn-text">{text}</span>
       </button>
-      ;
     </div>
   );
 };
