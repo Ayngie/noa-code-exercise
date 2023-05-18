@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import BasicButton from "./BasicButton";
+import Button from "./Button";
 
-const PrimaryButton = styled(BasicButton)`
+const PrimaryButton = styled(Button)`
   color: white;
   background-color: hotpink;
   border-style: none;

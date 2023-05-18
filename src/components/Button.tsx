@@ -8,7 +8,7 @@ interface IButtonProps {
   children?: React.JSX.Element;
 }
 
-const Button = styled.button`
+const BasicButtonStyling = styled.button`
   padding: 0.5rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -26,21 +26,16 @@ const ButtonSymbol = styled.span`
   font-weight: bold;
 `;
 
-export const BasicButton = ({
-  symbol,
-  text,
-  className,
-  children,
-}: IButtonProps) => {
+export const Button = ({ symbol, text, className, children }: IButtonProps) => {
   return (
-    <Button className={className}>
+    <BasicButtonStyling className={className}>
       {children}
       <TextWrapper>
         <ButtonSymbol>{symbol}</ButtonSymbol>
         <span>{text}</span>
       </TextWrapper>
-    </Button>
+    </BasicButtonStyling>
   );
 };
 
-export default BasicButton;
+export default Button;
