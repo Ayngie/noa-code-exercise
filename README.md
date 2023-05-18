@@ -1,46 +1,71 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
+# NoA Ignite - code exercise
 
-## Available Scripts
+## Short description:
+This is a coding exercise for applying for internship at NoA Ignite! 
 
-In the project directory, you can run:
+The instructions were: 
+- Build a react app showing two buttons and a counter (as shown in received mock-ups), with functionality connected to the buttons. 
+- The buttons should have a certain styling as detailed in the instructions I received, and should increase/decrease the count displayed in the counter. 
+- The counter is connected to an array of git-repos, and upon increasing/decreasing the count the number in the counter should correlate with the position in the array of repos - showing some data about that repository. 
+- The app should include error handling for the API, and other possible errors. 
+- For an extra feature - the app could display a loader while new data is being fetched from the API.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Techniques used (shields/badges)
+![Git badge](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white/to/img.png) 
+![VSCode badge](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white/to/img.png)
+![Prettier badge](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E/to/img.png)
+![HTML5 badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white/to/img.png)
+![JavaScript badge](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E/to/img.png)
+![TypeScript badge](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white/to/img.png)
+![React badge](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB/to/img.png)
+![GitHub badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white/to/img.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Git commit convention:
+- :sparkles: (feat): - *introduces a new feature to the codebase*
+- :memo: (docs): - *documentation / README*
+- :recycle: (refactor): - *refactoring of code*
+- :construction_worker: (build): - *project build-up*
+- :bug: (fix): - *patches a bug in your codebase*
+- :lipstick: (style): - *css/scss styling*
+- :rewind: (revert): - *revert to previous code*
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Screenshot of project:
+![Demonstration of code exercise](./src/assets/Xxx.jpg?raw=true "NoA Ignite - code exercise")
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Run locally:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Clone the project
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```terminal
+  git clone 
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Go to the project directory
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```terminal
+  cd noa-code-exercise
+```
 
-## Learn More
+Install dependencies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```terminal
+  npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Start the server
+
+```terminal
+  npm start
+```
