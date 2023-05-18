@@ -7,9 +7,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2rem;
 `;
 
-const ButtonsContainer = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -19,12 +20,12 @@ const ButtonsContainer = styled.div`
 export const CodeExerciseApp = () => {
   return (
     <Wrapper>
-      <p>NoA Ignite - code exercise</p>
-      <ButtonsContainer>
-        <Button symbol={"- "} text={"DECREMENT"}></Button>
+      <h1>NoA Ignite - code exercise</h1>
+      <Container>
+        <Button symbol={"-"} text={"DECREMENT"}></Button>
         <Counter />
-        <Button symbol={"+ "} text={"INCREMENT"}></Button>
-      </ButtonsContainer>
+        <Button symbol={"+"} text={"INCREMENT"}></Button>
+      </Container>
     </Wrapper>
   );
 };

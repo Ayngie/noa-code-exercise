@@ -13,12 +13,25 @@ const StyledButton = styled.button`
   border-style: none;
 `;
 
+const TextWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+const ButtonSymbol = styled.span`
+  font-size: 1.5rem;
+  font-weight: bold;
+`;
+
 export const Button = ({ symbol, text }: IButtonProps) => {
   return (
     <>
       <StyledButton>
-        <span>{symbol}</span>
-        <span>{text}</span>
+        <TextWrapper>
+          <ButtonSymbol>{symbol}</ButtonSymbol>
+          <span>{text}</span>
+        </TextWrapper>
       </StyledButton>
     </>
   );
