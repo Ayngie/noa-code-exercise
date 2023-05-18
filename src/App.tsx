@@ -1,4 +1,3 @@
-import "./App.css";
 import { CodeExerciseApp } from "./components/CodeExerciseApp";
 
 function App() {
