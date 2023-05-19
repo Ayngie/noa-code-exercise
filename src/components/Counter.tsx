@@ -1,7 +1,11 @@
-export const Counter = () => {
+interface ICounterProps {
+  count: number;
+}
+
+export const Counter = ({ count }: ICounterProps) => {
   return (
-    <div className="counter-container">
-      <p>Counter: 0</p>
+    <div>
+      <p>Counter: {count}</p>
     </div>
   );
 };
