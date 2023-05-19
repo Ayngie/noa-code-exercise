@@ -2,6 +2,7 @@ import NormalButton from "./NormalButton";
 import { Counter } from "./Counter";
 import PrimaryButton from "./PrimaryButton";
 import styled from "styled-components";
+import { DisplayRepo } from "./DisplayRepo";
 
 const Wrapper = styled.div`
   margin: 0;
@@ -11,7 +12,7 @@ const Wrapper = styled.div`
   gap: 2rem;
 `;
 
-const CodeExerciseContainer = styled.div`
+const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -22,7 +23,7 @@ export const CodeExerciseApp = () => {
   return (
     <Wrapper>
       <h1>NoA Ignite - code exercise</h1>
-      <CodeExerciseContainer>
+      <ButtonsContainer>
         <NormalButton
           symbol={"-"}
           text={"DECREMENT"}
@@ -32,7 +33,8 @@ export const CodeExerciseApp = () => {
           symbol={"+"}
           text={"INCREMENT"}
           className={"primary-button"}></PrimaryButton>
-      </CodeExerciseContainer>
+      </ButtonsContainer>
+      <DisplayRepo />
     </Wrapper>
   );
 };
