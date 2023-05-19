@@ -17,26 +17,31 @@ const StyledButton = styled.button`
   background-color: ${(props) =>
     props.className === "primary" ? "hotpink" : "white"};
   border: ${(props) =>
-    props.className === "normal" ? "2px solid black" : "none"};
+    props.className === "primary" ? "2px solid hotpink" : "2px solid black"};
 
   &:hover {
     cursor: pointer;
-    color: ${(props) => (props.className === "normal" ? "white" : "white")};
+    color: ${(props) => (props.className === "primary" ? "white" : "white")};
     background-color: ${(props) =>
       props.className === "primary" ? "rebeccapurple" : "black"};
+    border: ${(props) =>
+      props.className === "primary"
+        ? "2px solid rebeccapurple"
+        : "2px solid black"};
   }
 
   &:active {
     color: ${(props) => (props.className === "primary" ? "white" : "black")};
     background-color: ${(props) =>
       props.className === "primary" ? "hotpink" : "white"};
+    border: ${(props) =>
+      props.className === "primary" ? "2px solid hotpink" : "2px solid black"};
   }
 `;
 
 const Text = styled.span`
   font-size: 1rem;
   font-weight: 500;
-  line-height: 2;
 `;
 
 const Symbol = styled.span`
