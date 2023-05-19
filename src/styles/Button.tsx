@@ -40,12 +40,12 @@ const StyledButton = styled.button`
 `;
 
 const Text = styled.span`
-  font-size: 1rem;
-  font-weight: 500;
+  line-height: 2rem;
 `;
 
 const Symbol = styled.span`
-  font-size: 2rem;
+  line-height: 1rem;
+  font-size: 1.3rem;
   font-weight: bold;
 `;
 
