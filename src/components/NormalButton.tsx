@@ -9,7 +9,6 @@ const NormalButton = styled(Button)`
   &:hover {
     color: white;
     background-color: black;
-    cursor: pointer;
   }
 
   &:active {

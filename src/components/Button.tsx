@@ -13,6 +13,10 @@ const BasicButtonStyling = styled.button`
   padding-left: 2rem;
   padding-right: 2rem;
   border-radius: 50px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const TextWrapper = styled.div`

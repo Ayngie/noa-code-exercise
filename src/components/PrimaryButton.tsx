@@ -8,7 +8,6 @@ const PrimaryButton = styled(Button)`
 
   &:hover {
     background-color: rebeccapurple;
-    cursor: pointer;
   }
 
   &:active {
