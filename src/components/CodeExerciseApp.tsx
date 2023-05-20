@@ -6,28 +6,11 @@ import { Counter } from "./Counter";
 import { DisplayRepo } from "./DisplayRepo";
 
 export const CodeExerciseApp = () => {
-  const [currentCount, dispatch] = useReducer(
-    CountReducer,
-    JSON.parse(localStorage.getItem("currentCountFromLS") || "5")
-  );
-  localStorage.setItem("currentCountFromLS", JSON.stringify(currentCount));
+  const initialCount = { count: 4 };
+  const [currentCount, dispatch] = useReducer(CountReducer, initialCount);
 
-  const repoNamesList = [
-    { repoName: "eslint/eslint", position: 0 },
-    { repoName: "oakwood/front-end-questions", position: 1 },
-    { repoName: "babel/babel", position: 2 },
-    { repoName: "webpack/webpack", position: 3 },
-    { repoName: "storybooks/storybook", position: 4 },
-    { repoName: "facebook/react", position: 5 },
-    { repoName: "reactjs/redux", position: 6 },
-    { repoName: "expressjs/express", position: 7 },
-  ];
-  // console.log("List of repoNames: ", repoNamesList);
-  // console.log("repoNamesList[0]: ", repoNamesList[0]);
-  // console.log("repoNamesList[currentCount]: ", repoNamesList[+currentCount]);
-
-  const currentRepo = repoNamesList[+currentCount];
-  console.log("currentRepo: ", currentRepo);
+  console.log("currentCount:", currentCount);
+  // console.log("+currentCount:", +currentCount);
 
   return (
     <MainWrapper>
@@ -37,7 +20,7 @@ export const CodeExerciseApp = () => {
           onClick={() =>
             dispatch({
               type: ActionType.DECREMENTED,
-              payload: currentCount.count,
+              payload: +currentCount,
             })
           }
           symbol={"-"}
@@ -48,7 +31,7 @@ export const CodeExerciseApp = () => {
           onClick={() => {
             dispatch({
               type: ActionType.INCREMENTED,
-              payload: currentCount.count,
+              payload: +currentCount,
             });
           }}
           symbol={"+"}
