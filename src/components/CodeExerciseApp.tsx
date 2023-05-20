@@ -10,7 +10,7 @@ export const CodeExerciseApp = () => {
   const [currentCount, dispatch] = useReducer(CountReducer, initialCount);
 
   console.log("currentCount:", currentCount);
-  // console.log("+currentCount:", +currentCount);
+  console.log("currentCount.count:", currentCount.count);
 
   return (
     <MainWrapper>
@@ -20,18 +20,18 @@ export const CodeExerciseApp = () => {
           onClick={() =>
             dispatch({
               type: ActionType.DECREMENTED,
-              payload: +currentCount,
+              payload: 1,
             })
           }
           symbol={"-"}
           text={"DECREMENT"}
           className={"normal"}></Button>
-        <Counter currentCount={currentCount} />
+        <Counter count={currentCount.count} />
         <Button
           onClick={() => {
             dispatch({
               type: ActionType.INCREMENTED,
-              payload: +currentCount,
+              payload: 1,
             });
           }}
           symbol={"+"}
