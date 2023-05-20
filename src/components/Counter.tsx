@@ -1,11 +1,13 @@
+import { Count } from "../models/Count";
+
 interface ICounterProps {
-  count: number;
+  currentCount: Count;
 }
 
-export const Counter = ({ count }: ICounterProps) => {
+export const Counter = ({ currentCount }: ICounterProps) => {
   return (
     <div>
-      <p>Counter: {count}</p>
+      <p>Counter: {currentCount.count}</p>
     </div>
   );
 };
