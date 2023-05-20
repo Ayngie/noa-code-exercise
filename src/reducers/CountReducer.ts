@@ -13,8 +13,10 @@ export interface IAction {
 export const CountReducer = (currentCount: Count, action: IAction) => {
   switch (action.type) {
     case ActionType.INCREMENTED: {
-      if (action.payload < 8) {
-        console.log("Clicked increment");
+      console.log("Clicked increment");
+      console.log(" Incremented - action.payload: ", action.payload);
+
+      if (+action.payload < 8) {
         return { ...currentCount, count: action.payload + 1 };
       } else {
         return currentCount;
@@ -22,8 +24,10 @@ export const CountReducer = (currentCount: Count, action: IAction) => {
     }
 
     case ActionType.DECREMENTED: {
-      if (action.payload > 0) {
-        console.log("Clicked decrement");
+      console.log("Clicked decrement");
+      console.log(" Decremented - action.payload: ", action.payload);
+
+      if (+action.payload > 0) {
         return { ...currentCount, count: action.payload - 1 };
       } else {
         return currentCount;
