@@ -16,9 +16,9 @@ export const CountReducer = (currentCount: Count, action: IAction) => {
       console.log("Clicked increment");
       console.log(" Incremented - action.payload is: ", action.payload);
 
-      if (+action.payload < 7) {
+      if (currentCount.count < 7) {
         console.log("Incremented one.");
-        return { ...currentCount, count: action.payload + 1 };
+        return { ...currentCount, count: currentCount.count + action.payload };
       } else {
         console.log("Count was 7, no increment action was performed.");
         return currentCount;
@@ -29,9 +29,9 @@ export const CountReducer = (currentCount: Count, action: IAction) => {
       console.log("Clicked decrement");
       console.log(" Decremented - action.payload is: ", action.payload);
 
-      if (+action.payload > 0) {
+      if (currentCount.count > 0) {
         console.log("Decremented one.");
-        return { ...currentCount, count: action.payload - 1 };
+        return { ...currentCount, count: currentCount.count - action.payload };
       } else {
         console.log("Count was 0, no decrement action was performed.");
         return currentCount;
