@@ -16,7 +16,6 @@ export const CountReducer = (currentCount: Count, action: IAction) => {
       if (action.payload < 8) {
         console.log("Clicked increment");
         return { ...currentCount, count: action.payload + 1 };
-        // return count;
       } else {
         return currentCount;
       }
@@ -26,14 +25,13 @@ export const CountReducer = (currentCount: Count, action: IAction) => {
       if (action.payload > 0) {
         console.log("Clicked decrement");
         return { ...currentCount, count: action.payload - 1 };
-        // return count;
       } else {
         return currentCount;
       }
     }
 
     default:
-      //   return count;
+      console.log("CountReducer error...");
       throw Error("Type does not exist, check spelling");
   }
 };
