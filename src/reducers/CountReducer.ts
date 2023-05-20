@@ -14,28 +14,32 @@ export const CountReducer = (currentCount: Count, action: IAction) => {
   switch (action.type) {
     case ActionType.INCREMENTED: {
       console.log("Clicked increment");
-      console.log(" Incremented - action.payload: ", action.payload);
+      console.log(" Incremented - action.payload is: ", action.payload);
 
-      if (+action.payload < 8) {
+      if (+action.payload < 7) {
+        console.log("Incremented one.");
         return { ...currentCount, count: action.payload + 1 };
       } else {
+        console.log("Count was 7, no increment action was performed.");
         return currentCount;
       }
     }
 
     case ActionType.DECREMENTED: {
       console.log("Clicked decrement");
-      console.log(" Decremented - action.payload: ", action.payload);
+      console.log(" Decremented - action.payload is: ", action.payload);
 
       if (+action.payload > 0) {
+        console.log("Decremented one.");
         return { ...currentCount, count: action.payload - 1 };
       } else {
+        console.log("Count was 0, no decrement action was performed.");
         return currentCount;
       }
     }
 
     default:
-      console.log("CountReducer error...");
-      throw Error("Type does not exist, check spelling");
+      console.log("ActionType error...");
+      throw new Error(`Type: '${action.type}' does not exist, check spelling.`);
   }
 };
