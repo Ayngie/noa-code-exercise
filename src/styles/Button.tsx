@@ -3,7 +3,7 @@ import { ButtonContentsWrapper } from "./Wrappers";
 import { IAction } from "../reducers/CountReducer";
 
 interface IButtonProps {
-  dispatch: () => void;
+  onClick: (dispatch: (action: IAction, payload: number) => void) => void;
   symbol: string;
   text: string;
   className: string;
