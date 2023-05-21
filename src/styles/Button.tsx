@@ -24,7 +24,7 @@ const Text = styled.span`
 
 const Symbol = styled.span`
   line-height: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
 `;
 
@@ -39,9 +39,7 @@ export const Button = ({ symbol, text, className }: IButtonProps) => {
   );
 };
 
-export const NormalButton = styled(Button).attrs((props) => ({
-  className: "normal",
-}))`
+export const NormalButton = styled(Button)`
   color: black;
   background-color: white;
   border: 2px solid black;
@@ -57,11 +55,13 @@ export const NormalButton = styled(Button).attrs((props) => ({
     background-color: white;
     border: 2px solid black;
   }
+
+  ${Symbol} {
+    transform: translateY(-2px);
+  }
 `;
 
-export const PrimaryButton = styled(Button).attrs((props) => ({
-  className: "primary",
-}))`
+export const PrimaryButton = styled(Button)`
   color: white;
   background-color: hotpink;
   border: 2px solid hotpink;
