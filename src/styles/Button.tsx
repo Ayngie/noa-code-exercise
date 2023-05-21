@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { ButtonContentsWrapper } from "./Wrappers";
-import { IAction } from "../reducers/CountReducer";
 
 interface IButtonProps {
-  onClick: (dispatch: (action: IAction, payload: number) => void) => void;
+  onClick: () => void;
   symbol: string;
   text: string;
   className: string;

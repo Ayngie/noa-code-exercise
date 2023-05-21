@@ -1,4 +1,4 @@
-export const DisplayRepo = () => {
+export const RepoView = () => {
   return (
     <div>
       <h2>The repository you chose is:</h2>

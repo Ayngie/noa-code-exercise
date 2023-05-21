@@ -1,44 +1,48 @@
-import { useReducer } from "react";
-import { ActionType, CountReducer, IAction } from "../reducers/CountReducer";
-import { Button } from "../styles/Button";
-import { MainWrapper, ButtonsContainer } from "../styles/Wrappers";
-import { Counter } from "./Counter";
-import { DisplayRepo } from "./DisplayRepo";
+import { useState } from "react";
+import { MainWrapper } from "../styles/Wrappers";
+import { CounterView } from "./CounterView";
+import { RepoView } from "./RepoView";
+import { Count } from "../models/Count";
 
 export const CodeExerciseApp = () => {
-  const initialCount = { count: 4 };
-  const [currentCount, dispatch] = useReducer(CountReducer, initialCount);
+  const [currentCount, setCurrentCount] = useState<Count>({ count: 4 });
 
   console.log("currentCount:", currentCount);
   console.log("currentCount.count:", currentCount.count);
 
+  const handleIncrement = () => {
+    console.log("Clicked increment");
+
+    if (currentCount.count < 7) {
+      console.log("Incremented one.");
+      setCurrentCount({ ...currentCount, count: currentCount.count + 1 });
+    } else {
+      console.log("Count was 7, no increment action was performed.");
+      // return currentCount;
+    }
+  };
+
+  const handleDecrement = () => {
+    console.log("Clicked decrement");
+
+    if (currentCount.count > 0) {
+      console.log("Decremented one.");
+      setCurrentCount({ ...currentCount, count: currentCount.count - 1 });
+    } else {
+      console.log("Count was 0, no decrement action was performed.");
+      // return currentCount;
+    }
+  };
+
   return (
     <MainWrapper>
       <h1>NoA Ignite - code exercise</h1>
-      <ButtonsContainer>
-        <Button
-          onClick={() => {
-            dispatch({
-              type: ActionType.DECREMENTED,
-              payload: 1,
-            });
-          }}
-          symbol={"-"}
-          text={"DECREMENT"}
-          className={"normal"}></Button>
-        <Counter count={currentCount.count} />
-        <Button
-          onClick={() => {
-            dispatch({
-              type: ActionType.INCREMENTED,
-              payload: 1,
-            });
-          }}
-          symbol={"+"}
-          text={"INCREMENT"}
-          className={"primary"}></Button>
-      </ButtonsContainer>
-      <DisplayRepo />
+      <CounterView
+        count={currentCount.count}
+        handleIncrement={handleIncrement}
+        handleDecrement={handleDecrement}
+      />
+      <RepoView />
     </MainWrapper>
   );
 };
