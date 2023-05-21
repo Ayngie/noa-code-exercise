@@ -7,36 +7,14 @@ interface IButtonProps {
   text: string;
   className: string;
 }
-
-const StyledButton = styled.button`
+const BasicButton = styled.button`
   padding: 0.5rem;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
   border-radius: 50px;
 
-  color: ${(props) => (props.className === "primary" ? "white" : "black")};
-  background-color: ${(props) =>
-    props.className === "primary" ? "hotpink" : "white"};
-  border: ${(props) =>
-    props.className === "primary" ? "2px solid hotpink" : "2px solid black"};
-
   &:hover {
     cursor: pointer;
-    color: ${(props) => (props.className === "primary" ? "white" : "white")};
-    background-color: ${(props) =>
-      props.className === "primary" ? "rebeccapurple" : "black"};
-    border: ${(props) =>
-      props.className === "primary"
-        ? "2px solid rebeccapurple"
-        : "2px solid black"};
-  }
-
-  &:active {
-    color: ${(props) => (props.className === "primary" ? "white" : "black")};
-    background-color: ${(props) =>
-      props.className === "primary" ? "hotpink" : "white"};
-    border: ${(props) =>
-      props.className === "primary" ? "2px solid hotpink" : "2px solid black"};
   }
 `;
 
@@ -52,11 +30,51 @@ const Symbol = styled.span`
 
 export const Button = ({ symbol, text, className }: IButtonProps) => {
   return (
-    <StyledButton className={className}>
+    <BasicButton className={className}>
       <ButtonContentsWrapper>
         <Symbol>{symbol}</Symbol>
         <Text>{text}</Text>
       </ButtonContentsWrapper>
-    </StyledButton>
+    </BasicButton>
   );
 };
+
+export const NormalButton = styled(Button).attrs((props) => ({
+  className: "normal",
+}))`
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+
+  &:hover {
+    color: white;
+    background-color: black;
+    border: 2px solid black;
+  }
+
+  &:active {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+  }
+`;
+
+export const PrimaryButton = styled(Button).attrs((props) => ({
+  className: "primary",
+}))`
+  color: white;
+  background-color: hotpink;
+  border: 2px solid hotpink;
+
+  &:hover {
+    color: white;
+    background-color: rebeccapurple;
+    border: 2px solid rebeccapurple;
+  }
+
+  &:active {
+    color: white;
+    background-color: hotpink;
+    border: 2px solid hotpink;
+  }
+`;
