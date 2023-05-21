@@ -20,7 +20,7 @@ export const CountReducer = (currentCount: Count, action: IAction) => {
         console.log("Incremented one.");
         return { ...currentCount, count: currentCount.count + action.payload };
       } else {
-        console.log("Count was 7, no increment action was performed.");
+        console.log("Count is 7, no increment action was performed.");
         return currentCount;
       }
     }
@@ -33,7 +33,7 @@ export const CountReducer = (currentCount: Count, action: IAction) => {
         console.log("Decremented one.");
         return { ...currentCount, count: currentCount.count - action.payload };
       } else {
-        console.log("Count was 0, no decrement action was performed.");
+        console.log("Count is 0, no decrement action was performed.");
         return currentCount;
       }
     }
