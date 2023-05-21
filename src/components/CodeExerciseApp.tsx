@@ -60,7 +60,6 @@ export const CodeExerciseApp = () => {
         return {};
       }
     }
-
     fetchData();
   }, [count]);
 
@@ -106,9 +105,7 @@ export const CodeExerciseApp = () => {
           <Loader />
         </div>
       )}
-      {noRepo && !isLoading && (
-        <h2>Sorry, we can't show you this repository.</h2>
-      )}
+      {noRepo && !isLoading && <h2>Not Found</h2>}
       {!noRepo && <RepoView repoToShow={repoToShow} />}
     </MainWrapper>
   );
