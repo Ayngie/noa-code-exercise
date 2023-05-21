@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
+import { IRepo } from "../models/IRepo";
 import { MainWrapper } from "../styles/Wrappers";
 import { CounterView } from "./CounterView";
-import { RepoView } from "./RepoView";
-import { IRepo } from "../models/IRepo";
-import axios from "axios";
 import { Loader } from "../styles/Loader";
+import { RepoView } from "./RepoView";
 
 export const CodeExerciseApp = () => {
   const [count, setCount] = useState<number>(0);

@@ -1,6 +1,6 @@
+import { CounterRow } from "../styles/Wrappers";
 import { NormalButton, PrimaryButton } from "../styles/Button";
 import { Counter } from "../styles/Counter";
-import { CounterRow } from "../styles/Wrappers";
 
 interface ICounterProps {
   count: number;
