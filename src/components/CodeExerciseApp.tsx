@@ -3,25 +3,26 @@ import { MainWrapper } from "../styles/Wrappers";
 import { CounterView } from "./CounterView";
 import { RepoView } from "./RepoView";
 import { IRepo } from "../models/IRepo";
-import { IError } from "../models/IError";
 import axios from "axios";
+import { Loader } from "../styles/Loader";
 
 export const CodeExerciseApp = () => {
-  // const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [count, setCount] = useState<number>(2);
+  const [count, setCount] = useState<number>(0);
   console.log("count:", count);
 
-  //variable for reponame:
-  //make sure variablename updates with state change of count
-
-  //call getRepos with variablename, catch response
   const [repoToShow, setRepoToShow] = useState<IRepo>({
     full_name: "",
     description: "",
     stargazers_count: 0,
   });
 
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [noRepo, setNoRepo] = useState<boolean>(false);
+
   useEffect(() => {
+    setNoRepo(true);
+    setIsLoading(true);
+
     const repoNamesList = [
       { repoName: "eslint/eslint" },
       { repoName: "oakwood/front-end-questions" },
@@ -38,27 +39,30 @@ export const CodeExerciseApp = () => {
 
     async function fetchData() {
       try {
-        // You can await here
         const response = await axios.get<IRepo>(
           `https://api.github.com/repos/${repoToGet}`
         );
-        // ...
         const newRepo: IRepo = {
           full_name: response.data.full_name,
           description: response.data.description,
           stargazers_count: response.data.stargazers_count,
         };
         setRepoToShow(newRepo);
+        setIsLoading(false);
+        setNoRepo(false);
       } catch (error) {
+        if (error) {
+          console.log("if error");
+          setNoRepo(true);
+          setIsLoading(false);
+        }
         console.error("Oops, there was the following error: ", error);
         return {};
       }
     }
 
     fetchData();
-  }, [count]); // Or [] if effect doesn't need props or state
-
-  //send response as prop
+  }, [count]);
 
   const handleIncrement = () => {
     console.log("Clicked increment");
@@ -66,10 +70,9 @@ export const CodeExerciseApp = () => {
     if (count < 7) {
       console.log("Incremented one.");
       let newCount: number = count + 1;
-      // let nameOfNewRepoToGet: string = repoNamesList[newCount].repoName;
 
       setCount(newCount);
-      // setRepoToGet(nameOfNewRepoToGet);
+      // setNoRepo(false);
     } else {
       console.log("Count is 7, no increment action was performed.");
     }
@@ -81,10 +84,9 @@ export const CodeExerciseApp = () => {
     if (count > 0) {
       console.log("Decremented one.");
       let newCount: number = count - 1;
-      // let nameOfNewRepoToGet: string = repoNamesList[newCount].repoName;
 
       setCount(newCount);
-      // setRepoToGet(nameOfNewRepoToGet);
+      // setNoRepo(false);
     } else {
       console.log("Count is 0, no decrement action was performed.");
     }
@@ -98,8 +100,16 @@ export const CodeExerciseApp = () => {
         handleIncrement={handleIncrement}
         handleDecrement={handleDecrement}
       />
-      {/* {isLoading && <h3>Repository is loading...</h3>} */}
-      <RepoView repoToShow={repoToShow} />
+      {isLoading && (
+        <div>
+          <h3>Loading repository...</h3>
+          <Loader />
+        </div>
+      )}
+      {noRepo && !isLoading && (
+        <h2>Sorry, we can't show you this repository.</h2>
+      )}
+      {!noRepo && <RepoView repoToShow={repoToShow} />}
     </MainWrapper>
   );
 };
