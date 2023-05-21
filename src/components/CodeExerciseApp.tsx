@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import { ActionType, CountReducer, IAction } from "../reducers/CountReducer";
+import { ActionType, CountReducer } from "../reducers/CountReducer";
 import { Button } from "../styles/Button";
 import { MainWrapper, ButtonsContainer } from "../styles/Wrappers";
 import { Counter } from "./Counter";
@@ -16,27 +16,28 @@ export const CodeExerciseApp = () => {
     <MainWrapper>
       <h1>NoA Ignite - code exercise</h1>
       <ButtonsContainer>
-        <Button
+        <div
           onClick={() => {
             dispatch({
               type: ActionType.DECREMENTED,
               payload: 1,
             });
-          }}
-          symbol={"-"}
-          text={"DECREMENT"}
-          className={"normal"}></Button>
+          }}>
+          <Button symbol={"-"} text={"DECREMENT"} className={"normal"}></Button>
+        </div>
         <Counter count={currentCount.count} />
-        <Button
+        <div
           onClick={() => {
             dispatch({
               type: ActionType.INCREMENTED,
               payload: 1,
             });
-          }}
-          symbol={"+"}
-          text={"INCREMENT"}
-          className={"primary"}></Button>
+          }}>
+          <Button
+            symbol={"+"}
+            text={"INCREMENT"}
+            className={"primary"}></Button>
+        </div>
       </ButtonsContainer>
       <DisplayRepo />
     </MainWrapper>
