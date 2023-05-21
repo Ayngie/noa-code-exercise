@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { ButtonContentsWrapper } from "./Wrappers";
-import { IAction } from "../reducers/CountReducer";
 
 interface IButtonProps {
   symbol: string;
