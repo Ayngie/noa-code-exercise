@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { IRepo } from "../models/IRepo";
-import { MainWrapper } from "../styles/Wrappers";
+import { CodeTestWrapper, MainWrapper } from "../styles/Wrappers";
 import { CounterView } from "./CounterView";
 import { Loader } from "../styles/Loader";
 import { RepoView } from "./RepoView";
@@ -94,19 +94,21 @@ export const CodeExerciseApp = () => {
   return (
     <MainWrapper>
       <h1>NoA Ignite - code exercise</h1>
-      <CounterView
-        count={count}
-        handleIncrement={handleIncrement}
-        handleDecrement={handleDecrement}
-      />
-      {isLoading && (
-        <div>
-          <h3>Loading repository...</h3>
-          <Loader />
-        </div>
-      )}
-      {noRepo && !isLoading && <h2>Not Found</h2>}
-      {!noRepo && <RepoView repoToShow={repoToShow} />}
+      <CodeTestWrapper>
+        <CounterView
+          count={count}
+          handleIncrement={handleIncrement}
+          handleDecrement={handleDecrement}
+        />
+        {isLoading && (
+          <div>
+            <h3>Loading repository...</h3>
+            <Loader />
+          </div>
+        )}
+        {noRepo && !isLoading && <h2>Not Found</h2>}
+        {!noRepo && <RepoView repoToShow={repoToShow} />}
+      </CodeTestWrapper>
     </MainWrapper>
   );
 };
