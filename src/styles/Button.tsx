@@ -1,27 +1,26 @@
 import styled from "styled-components";
-import { ButtonContentsWrapper } from "./Wrappers";
+import { ButtonContents } from "./Wrappers";
 
 interface IButtonProps {
-  onClick: () => void;
+  onClick: (handleAction: () => void) => void;
   symbol: string;
   text: string;
   className: string;
 }
+
 const BasicButton = styled.button`
   padding: 0.5rem;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
   border-radius: 50px;
-
   &:hover {
+    color: white;
     cursor: pointer;
   }
 `;
-
 const Text = styled.span`
   line-height: 2rem;
 `;
-
 const Symbol = styled.span`
   line-height: 1rem;
   font-size: 1.5rem;
@@ -31,10 +30,10 @@ const Symbol = styled.span`
 export const Button = ({ symbol, text, className }: IButtonProps) => {
   return (
     <BasicButton className={className}>
-      <ButtonContentsWrapper>
+      <ButtonContents>
         <Symbol>{symbol}</Symbol>
         <Text>{text}</Text>
-      </ButtonContentsWrapper>
+      </ButtonContents>
     </BasicButton>
   );
 };
@@ -43,19 +42,15 @@ export const NormalButton = styled(Button)`
   color: black;
   background-color: white;
   border: 2px solid black;
-
   &:hover {
-    color: white;
     background-color: black;
     border: 2px solid black;
   }
-
   &:active {
     color: black;
     background-color: white;
     border: 2px solid black;
   }
-
   ${Symbol} {
     transform: translateY(-2px);
   }
@@ -65,13 +60,10 @@ export const PrimaryButton = styled(Button)`
   color: white;
   background-color: hotpink;
   border: 2px solid hotpink;
-
   &:hover {
-    color: white;
     background-color: rebeccapurple;
     border: 2px solid rebeccapurple;
   }
-
   &:active {
     color: white;
     background-color: hotpink;
