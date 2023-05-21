@@ -6,16 +6,24 @@ export const MainWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+
+  h1 {
+    text-align: center;
+  }
 `;
 
-export const ButtonsContainer = styled.div`
+export const CounterRow = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
-export const ButtonContentsWrapper = styled.div`
+export const ButtonContents = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
