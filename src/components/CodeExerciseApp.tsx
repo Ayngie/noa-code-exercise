@@ -16,10 +16,8 @@ export const CodeExerciseApp = () => {
     { repoName: "expressjs/express" },
   ];
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  // const [isLoading, setIsLoading] = useState<boolean>(false);
   const [currentCount, setCurrentCount] = useState<Count>({ count: 5 });
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [repoToGet, setRepoToGet] = useState<string>(
     repoNamesList[currentCount.count].repoName
   );
@@ -35,7 +33,6 @@ export const CodeExerciseApp = () => {
       setRepoToGet(repoNamesList[currentCount.count + 1].repoName);
     } else {
       console.log("Count was 7, no increment action was performed.");
-      // return currentCount;
     }
   };
 
@@ -48,7 +45,6 @@ export const CodeExerciseApp = () => {
       setRepoToGet(repoNamesList[currentCount.count - 1].repoName);
     } else {
       console.log("Count was 0, no decrement action was performed.");
-      // return currentCount;
     }
   };
 
@@ -60,7 +56,7 @@ export const CodeExerciseApp = () => {
         handleIncrement={handleIncrement}
         handleDecrement={handleDecrement}
       />
-      {isLoading && <h3>Repo is loading...</h3>}
+      {/* {isLoading && <h3>Repo is loading...</h3>} */}
       <RepoView />
     </MainWrapper>
   );
