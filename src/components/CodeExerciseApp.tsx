@@ -71,7 +71,6 @@ export const CodeExerciseApp = () => {
       let newCount: number = count + 1;
 
       setCount(newCount);
-      // setNoRepo(false);
     } else {
       console.log("Count is 7, no increment action was performed.");
     }
@@ -85,7 +84,6 @@ export const CodeExerciseApp = () => {
       let newCount: number = count - 1;
 
       setCount(newCount);
-      // setNoRepo(false);
     } else {
       console.log("Count is 0, no decrement action was performed.");
     }
