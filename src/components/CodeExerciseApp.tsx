@@ -5,10 +5,26 @@ import { RepoView } from "./RepoView";
 import { Count } from "../models/Count";
 
 export const CodeExerciseApp = () => {
-  const [currentCount, setCurrentCount] = useState<Count>({ count: 4 });
+  const repoNamesList = [
+    { repoName: "eslint/eslint" },
+    { repoName: "oakwood/front-end-questions" },
+    { repoName: "babel/babel" },
+    { repoName: "webpack/webpack" },
+    { repoName: "storybooks/storybook" },
+    { repoName: "facebook/react" },
+    { repoName: "reactjs/redux" },
+    { repoName: "expressjs/express" },
+  ];
 
-  console.log("currentCount:", currentCount);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [currentCount, setCurrentCount] = useState<Count>({ count: 5 });
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [repoToGet, setRepoToGet] = useState<string>(
+    repoNamesList[currentCount.count].repoName
+  );
   console.log("currentCount.count:", currentCount.count);
+  console.log("repoToGet: ", repoToGet);
 
   const handleIncrement = () => {
     console.log("Clicked increment");
@@ -16,6 +32,7 @@ export const CodeExerciseApp = () => {
     if (currentCount.count < 7) {
       console.log("Incremented one.");
       setCurrentCount({ ...currentCount, count: currentCount.count + 1 });
+      setRepoToGet(repoNamesList[currentCount.count + 1].repoName);
     } else {
       console.log("Count was 7, no increment action was performed.");
       // return currentCount;
@@ -28,6 +45,7 @@ export const CodeExerciseApp = () => {
     if (currentCount.count > 0) {
       console.log("Decremented one.");
       setCurrentCount({ ...currentCount, count: currentCount.count - 1 });
+      setRepoToGet(repoNamesList[currentCount.count - 1].repoName);
     } else {
       console.log("Count was 0, no decrement action was performed.");
       // return currentCount;
@@ -42,6 +60,7 @@ export const CodeExerciseApp = () => {
         handleIncrement={handleIncrement}
         handleDecrement={handleDecrement}
       />
+      {isLoading && <h3>Repo is loading...</h3>}
       <RepoView />
     </MainWrapper>
   );
