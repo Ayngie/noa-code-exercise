@@ -15,23 +15,27 @@ export const CounterView = ({
 }: ICounterProps) => {
   return (
     <CounterRow>
-      <NormalButton
+      <div
         onClick={() => {
-          handleIncrement();
-        }}
-        symbol={"-"}
-        text={"DECREMENT"}
-        className={"normal"}></NormalButton>
+          handleDecrement();
+        }}>
+        <NormalButton
+          symbol={"-"}
+          text={"DECREMENT"}
+          className={"normal"}></NormalButton>
+      </div>
 
       <Counter count={count} />
 
-      <PrimaryButton
+      <div
         onClick={() => {
-          handleDecrement();
-        }}
-        symbol={"+"}
-        text={"INCREMENT"}
-        className={"primary"}></PrimaryButton>
+          handleIncrement();
+        }}>
+        <PrimaryButton
+          symbol={"+"}
+          text={"INCREMENT"}
+          className={"primary"}></PrimaryButton>
+      </div>
     </CounterRow>
   );
 };

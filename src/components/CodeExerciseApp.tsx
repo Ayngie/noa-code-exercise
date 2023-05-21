@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MainWrapper } from "../styles/Wrappers";
 import { CounterView } from "./CounterView";
 import { RepoView } from "./RepoView";
@@ -35,7 +35,7 @@ export const CodeExerciseApp = () => {
       setCount(newCount);
       setRepoToGet(nameOfNewRepoToGet);
     } else {
-      console.log("Count was 7, no increment action was performed.");
+      console.log("Count is 7, no increment action was performed.");
     }
   };
 
@@ -50,7 +50,7 @@ export const CodeExerciseApp = () => {
       setCount(newCount);
       setRepoToGet(nameOfNewRepoToGet);
     } else {
-      console.log("Count was 0, no decrement action was performed.");
+      console.log("Count is 0, no decrement action was performed.");
     }
   };
 

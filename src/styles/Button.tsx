@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { ButtonContents } from "./Wrappers";
 
 interface IButtonProps {
-  onClick: (handleAction: () => void) => void;
   symbol: string;
   text: string;
   className: string;
