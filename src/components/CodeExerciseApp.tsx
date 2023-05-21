@@ -2,7 +2,6 @@ import { useState } from "react";
 import { MainWrapper } from "../styles/Wrappers";
 import { CounterView } from "./CounterView";
 import { RepoView } from "./RepoView";
-import { Count } from "../models/Count";
 
 export const CodeExerciseApp = () => {
   const repoNamesList = [
@@ -17,20 +16,20 @@ export const CodeExerciseApp = () => {
   ];
 
   // const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [currentCount, setCurrentCount] = useState<Count>({ count: 5 });
+  const [count, setCount] = useState<number>(7);
   const [repoToGet, setRepoToGet] = useState<string>(
-    repoNamesList[currentCount.count].repoName
+    repoNamesList[count].repoName
   );
-  console.log("currentCount.count:", currentCount.count);
+  console.log("count:", count);
   console.log("repoToGet: ", repoToGet);
 
   const handleIncrement = () => {
     console.log("Clicked increment");
 
-    if (currentCount.count < 7) {
+    if (count < 7) {
       console.log("Incremented one.");
-      setCurrentCount({ ...currentCount, count: currentCount.count + 1 });
-      setRepoToGet(repoNamesList[currentCount.count + 1].repoName);
+      setCount(count + 1);
+      setRepoToGet(repoNamesList[count + 1].repoName);
     } else {
       console.log("Count was 7, no increment action was performed.");
     }
@@ -39,10 +38,10 @@ export const CodeExerciseApp = () => {
   const handleDecrement = () => {
     console.log("Clicked decrement");
 
-    if (currentCount.count > 0) {
+    if (count > 0) {
       console.log("Decremented one.");
-      setCurrentCount({ ...currentCount, count: currentCount.count - 1 });
-      setRepoToGet(repoNamesList[currentCount.count - 1].repoName);
+      setCount(count - 1);
+      setRepoToGet(repoNamesList[count - 1].repoName);
     } else {
       console.log("Count was 0, no decrement action was performed.");
     }
@@ -52,7 +51,7 @@ export const CodeExerciseApp = () => {
     <MainWrapper>
       <h1>NoA Ignite - code exercise</h1>
       <CounterView
-        count={currentCount.count}
+        count={count}
         handleIncrement={handleIncrement}
         handleDecrement={handleDecrement}
       />
