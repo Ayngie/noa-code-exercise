@@ -41,15 +41,15 @@ export const Button = ({ symbol, text, className }: IButtonProps) => {
 export const NormalButton = styled(Button)`
   color: black;
   background-color: white;
-  border: 2px solid black;
+  border: 1px solid black;
   &:hover {
     background-color: black;
-    border: 2px solid black;
+    border: 1px solid black;
   }
   &:active {
     color: black;
     background-color: white;
-    border: 2px solid black;
+    border: 1px solid black;
   }
   ${Symbol} {
     transform: translateY(-2px);
@@ -59,14 +59,14 @@ export const NormalButton = styled(Button)`
 export const PrimaryButton = styled(Button)`
   color: white;
   background-color: hotpink;
-  border: 2px solid hotpink;
+  border: 1px solid hotpink;
   &:hover {
     background-color: rebeccapurple;
-    border: 2px solid rebeccapurple;
+    border: 1px solid rebeccapurple;
   }
   &:active {
     color: white;
     background-color: hotpink;
-    border: 2px solid hotpink;
+    border: 1px solid hotpink;
   }
 `;
