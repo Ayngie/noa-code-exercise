@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MainWrapper } from "../styles/Wrappers";
 import { CounterView } from "./CounterView";
 import { RepoView } from "./RepoView";
@@ -17,10 +17,11 @@ export const CodeExerciseApp = () => {
 
   // const [isLoading, setIsLoading] = useState<boolean>(false);
   const [count, setCount] = useState<number>(7);
+  console.log("count:", count);
+
   const [repoToGet, setRepoToGet] = useState<string>(
     repoNamesList[count].repoName
   );
-  console.log("count:", count);
   console.log("repoToGet: ", repoToGet);
 
   const handleIncrement = () => {
@@ -28,8 +29,11 @@ export const CodeExerciseApp = () => {
 
     if (count < 7) {
       console.log("Incremented one.");
-      setCount(count + 1);
-      setRepoToGet(repoNamesList[count + 1].repoName);
+      let newCount: number = count + 1;
+      let nameOfNewRepoToGet: string = repoNamesList[newCount].repoName;
+
+      setCount(newCount);
+      setRepoToGet(nameOfNewRepoToGet);
     } else {
       console.log("Count was 7, no increment action was performed.");
     }
@@ -40,8 +44,11 @@ export const CodeExerciseApp = () => {
 
     if (count > 0) {
       console.log("Decremented one.");
-      setCount(count - 1);
-      setRepoToGet(repoNamesList[count - 1].repoName);
+      let newCount: number = count - 1;
+      let nameOfNewRepoToGet: string = repoNamesList[newCount].repoName;
+
+      setCount(newCount);
+      setRepoToGet(nameOfNewRepoToGet);
     } else {
       console.log("Count was 0, no decrement action was performed.");
     }
