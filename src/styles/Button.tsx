@@ -19,6 +19,7 @@ const BasicButton = styled.button`
 `;
 const Text = styled.span`
   line-height: 2rem;
+  letter-spacing: 1px;
 `;
 const Symbol = styled.span`
   line-height: 1rem;
