@@ -16,7 +16,7 @@ const Spinner = styled.div`
 `;
 
 const SpinnerLoader = styled.div`
-  border: 16px solid #f3f3f3; /* Light grey */
+  border: 16px solid #f3f3f3;
   border-top: 16px solid rgb(252, 0, 122);
   border-radius: 50%;
   width: 120px;
