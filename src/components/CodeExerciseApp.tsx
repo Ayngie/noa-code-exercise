@@ -7,21 +7,28 @@ import { Loader } from "../styles/Loader";
 import { RepoView } from "./RepoView";
 
 export const CodeExerciseApp = () => {
-  const [count, setCount] = useState<number>(0);
-  console.log("count:", count);
+  const [count, setCount] = useState<number>(
+    parseInt(JSON.parse(localStorage.getItem("countfromLS") || "0")) || 0
+  );
 
-  const [repoToShow, setRepoToShow] = useState<IRepo>({
-    full_name: "",
-    description: "",
-    stargazers_count: 0,
-  });
-
+  const [repoShown, setRepoToShow] = useState<IRepo>(
+    JSON.parse(
+      localStorage.getItem("repoFromLS") ||
+        JSON.stringify({
+          full_name: "",
+          description: "",
+          stargazers_count: 0,
+        })
+    )
+  );
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [noRepo, setNoRepo] = useState<boolean>(false);
 
   useEffect(() => {
     setNoRepo(true);
     setIsLoading(true);
+
+    localStorage.setItem("countfromLS", JSON.stringify(count));
 
     const repoNamesList = [
       { repoName: "eslint/eslint" },
@@ -33,11 +40,17 @@ export const CodeExerciseApp = () => {
       { repoName: "reactjs/redux" },
       { repoName: "expressjs/express" },
     ];
-
     let repoToGet: string = repoNamesList[count].repoName;
-    console.log("repoToGet: ", repoToGet);
+
+    if (repoToGet === repoShown.full_name) {
+      setNoRepo(false);
+      setIsLoading(false);
+    } else {
+      fetchData();
+    }
 
     async function fetchData() {
+      console.log("get");
       try {
         const response = await axios.get<IRepo>(
           `https://api.github.com/repos/${repoToGet}`
@@ -47,12 +60,14 @@ export const CodeExerciseApp = () => {
           description: response.data.description,
           stargazers_count: response.data.stargazers_count,
         };
+
+        localStorage.setItem("repoFromLS", JSON.stringify(newRepo));
         setRepoToShow(newRepo);
         setIsLoading(false);
         setNoRepo(false);
       } catch (error) {
         if (error) {
-          console.log("if error");
+          localStorage.setItem("repoFromLS", JSON.stringify(""));
           setNoRepo(true);
           setIsLoading(false);
         }
@@ -60,16 +75,11 @@ export const CodeExerciseApp = () => {
         return {};
       }
     }
-    fetchData();
-  }, [count]);
+  }, [count, repoShown.full_name]);
 
   const handleIncrement = () => {
-    console.log("Clicked increment");
-
     if (count < 7) {
-      console.log("Incremented one.");
       let newCount: number = count + 1;
-
       setCount(newCount);
     } else {
       console.log("Count is 7, no increment action was performed.");
@@ -77,12 +87,8 @@ export const CodeExerciseApp = () => {
   };
 
   const handleDecrement = () => {
-    console.log("Clicked decrement");
-
     if (count > 0) {
-      console.log("Decremented one.");
       let newCount: number = count - 1;
-
       setCount(newCount);
     } else {
       console.log("Count is 0, no decrement action was performed.");
@@ -105,7 +111,7 @@ export const CodeExerciseApp = () => {
           </div>
         )}
         {noRepo && !isLoading && <h2>Not Found</h2>}
-        {!noRepo && <RepoView repoToShow={repoToShow} />}
+        {!noRepo && <RepoView repoShown={repoShown} />}
       </CodeTestWrapper>
     </MainWrapper>
   );
