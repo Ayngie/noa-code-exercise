@@ -50,7 +50,6 @@ export const CodeExerciseApp = () => {
     }
 
     async function fetchData() {
-      console.log("get");
       try {
         const response = await axios.get<IRepo>(
           `https://api.github.com/repos/${repoToGet}`
