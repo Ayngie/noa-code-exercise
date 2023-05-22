@@ -8,9 +8,14 @@ This is a coding exercise for applying for internship at NoA Ignite!
 The instructions were: 
 - Build a react app showing two buttons and a counter (as shown in received mock-ups), with functionality connected to the buttons. 
 - The buttons should have a certain styling as detailed in the instructions I received, and should increase/decrease the count displayed in the counter. 
-- The counter is connected to an array of git-repos, and upon increasing/decreasing the count the number in the counter should correlate with the position in the array of repos - showing some data about that repository. 
+- The counter is connected to an array of git-repo names, and upon increasing/decreasing the count the number in the counter should correlate with the position in the array of reponames - fetching and showing some data about that repository. 
 - The app should include error handling for the API, and other possible errors. 
-- For an extra feature - the app could display a loader while new data is being fetched from the API.
+- Extra feature - the app displays a loader while new data is being fetched from the API.
+
+
+I have also added some extra features of my own:
+- Saving the current repo to localStorage, so that the same repo will still show when updating browser, as well as for decreasing the amount of web requests made.
+- Responsivity mobile- / desktop-view.
 
 ---
 
