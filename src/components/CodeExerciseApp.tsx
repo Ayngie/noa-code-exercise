@@ -6,7 +6,7 @@ import { Counter } from "./Counter";
 import { DisplayRepo } from "./DisplayRepo";
 
 export const CodeExerciseApp = () => {
-  const initialCount = { count: 4 };
+  const initialCount = { count: 0 };
   const [currentCount, dispatch] = useReducer(CountReducer, initialCount);
 
   return (
