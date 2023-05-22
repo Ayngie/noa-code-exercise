@@ -40,7 +40,7 @@ The instructions were:
 ---
 
 ## Screenshot of project:
-![Demonstration of code exercise](./src/assets/Xxx.jpg?raw=true "NoA Ignite - code exercise")
+![Demonstration of code exercise](./src/assets/CodeExercise.png?raw=true "NoA Ignite - code exercise")
 
 ---
 
