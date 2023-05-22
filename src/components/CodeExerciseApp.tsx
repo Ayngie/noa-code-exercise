@@ -9,9 +9,6 @@ export const CodeExerciseApp = () => {
   const initialCount = { count: 4 };
   const [currentCount, dispatch] = useReducer(CountReducer, initialCount);
 
-  console.log("currentCount:", currentCount);
-  console.log("currentCount.count:", currentCount.count);
-
   return (
     <MainWrapper>
       <h1>NoA Ignite - code exercise</h1>
