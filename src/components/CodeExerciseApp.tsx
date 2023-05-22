@@ -1,7 +1,7 @@
 import { useReducer } from "react";
 import { ActionType, CountReducer } from "../reducers/CountReducer";
-import { Button } from "../styles/Button";
 import { MainWrapper, ButtonsContainer } from "../styles/Wrappers";
+import { Button } from "../styles/Button";
 import { Counter } from "./Counter";
 import { DisplayRepo } from "./DisplayRepo";
 
