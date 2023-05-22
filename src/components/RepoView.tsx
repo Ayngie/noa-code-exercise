@@ -3,7 +3,7 @@ import { IRepo } from "../models/IRepo";
 import { RepositoryContents } from "../styles/Wrappers";
 
 interface IRepoViewProps {
-  repoToShow: IRepo;
+  repoShown: IRepo;
 }
 
 const Title = styled.span`
@@ -13,21 +13,21 @@ const Info = styled.span`
   font-family: Georgia, "Times New Roman", Times, serif;
 `;
 
-export const RepoView = ({ repoToShow }: IRepoViewProps) => {
+export const RepoView = ({ repoShown }: IRepoViewProps) => {
   return (
     <RepositoryContents>
       <h2>The repository you chose is:</h2>
       <div>
         <p>
-          <Title>Full name: </Title> <Info>{repoToShow.full_name}</Info>
+          <Title>Full name: </Title> <Info>{repoShown.full_name}</Info>
         </p>
         <p>
           <Title>Description: </Title>
-          <Info>{repoToShow.description}</Info>
+          <Info>{repoShown.description}</Info>
         </p>
         <p>
           <Title>Amount of stars: </Title>
-          <Info>{repoToShow.stargazers_count}</Info>
+          <Info>{repoShown.stargazers_count}</Info>
         </p>
       </div>
     </RepositoryContents>
