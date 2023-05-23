@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import { SpinnerWrapper } from "./Wrappers";
 
 const rotation = keyframes`
     0% {
@@ -11,6 +10,10 @@ const rotation = keyframes`
 `;
 
 const Spinner = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   border: 16px solid #f3f3f3;
   border-top: 16px solid rgb(252, 0, 122);
   border-radius: 50%;
@@ -22,9 +25,7 @@ const Spinner = styled.div`
 export const Loader = () => {
   return (
     <>
-      <SpinnerWrapper>
-        <Spinner></Spinner>
-      </SpinnerWrapper>
+      <Spinner></Spinner>
     </>
   );
 };
