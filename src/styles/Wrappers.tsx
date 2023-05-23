@@ -56,3 +56,9 @@ export const RepositoryContents = styled.div`
     width: 90%;
   }
 `;
+
+export const SpinnerWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
