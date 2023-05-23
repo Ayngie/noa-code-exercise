@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ButtonContents } from "./Wrappers";
+import { ButtonContentsWrapper } from "./Wrappers";
 
 interface IButtonProps {
   symbol: string;
@@ -30,10 +30,10 @@ const Symbol = styled.span`
 export const Button = ({ symbol, text, className }: IButtonProps) => {
   return (
     <BasicButton className={className}>
-      <ButtonContents>
+      <ButtonContentsWrapper>
         <Symbol>{symbol}</Symbol>
         <Text>{text}</Text>
-      </ButtonContents>
+      </ButtonContentsWrapper>
     </BasicButton>
   );
 };

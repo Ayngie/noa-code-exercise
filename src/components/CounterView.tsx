@@ -1,4 +1,4 @@
-import { CounterRow } from "./styles/Wrappers";
+import { CounterRowWrapper } from "./styles/Wrappers";
 import { NormalButton, PrimaryButton } from "./styles/Button";
 import { Counter } from "./styles/Counter";
 
@@ -14,7 +14,7 @@ export const CounterView = ({
   handleDecrement,
 }: ICounterProps) => {
   return (
-    <CounterRow>
+    <CounterRowWrapper>
       <div
         onClick={() => {
           handleDecrement();
@@ -36,6 +36,6 @@ export const CounterView = ({
           text={"INCREMENT"}
           className={"primary"}></PrimaryButton>
       </div>
-    </CounterRow>
+    </CounterRowWrapper>
   );
 };

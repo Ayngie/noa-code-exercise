@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { IRepo } from "../models/IRepo";
-import { RepositoryContents } from "./styles/Wrappers";
+import { RepositoryWrapper } from "./styles/Wrappers";
 
 interface IRepoViewProps {
   repoShown: IRepo;
@@ -15,7 +15,7 @@ const Info = styled.span`
 
 export const RepoView = ({ repoShown }: IRepoViewProps) => {
   return (
-    <RepositoryContents>
+    <RepositoryWrapper>
       <h2>The repository you chose is:</h2>
       <div>
         <p>
@@ -30,6 +30,6 @@ export const RepoView = ({ repoShown }: IRepoViewProps) => {
           <Info>{repoShown.stargazers_count}</Info>
         </p>
       </div>
-    </RepositoryContents>
+    </RepositoryWrapper>
   );
 };

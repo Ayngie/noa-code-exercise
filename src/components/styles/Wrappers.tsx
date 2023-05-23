@@ -27,7 +27,7 @@ export const CodeTestWrapper = styled(MainWrapper)`
   }
 `;
 
-export const CounterRow = styled.div`
+export const CounterRowWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -38,13 +38,13 @@ export const CounterRow = styled.div`
   }
 `;
 
-export const ButtonContents = styled.div`
+export const ButtonContentsWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
 `;
 
-export const RepositoryContents = styled.div`
+export const RepositoryWrapper = styled.div`
   font-family: Georgia, "Times New Roman", Times, serif;
 
   display: flex;
