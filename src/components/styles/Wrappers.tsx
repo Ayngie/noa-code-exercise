@@ -24,7 +24,7 @@ export const CodeTestWrapper = styled(MainWrapper)`
   width: 60%;
   @media (max-width: 1000px) {
     width: 70%;
-    margin-top: 30%;
+    margin-top: 40%;
   }
 `;
 
