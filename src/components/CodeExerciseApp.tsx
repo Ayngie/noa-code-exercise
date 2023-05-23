@@ -109,6 +109,7 @@ export const CodeExerciseApp = () => {
             <Loader />
           </div>
         )}
+
         {noRepo && !isLoading && <h2>Not Found</h2>}
         {!noRepo && <RepoView repoShown={repoShown} />}
       </CodeTestWrapper>

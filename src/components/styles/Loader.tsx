@@ -9,7 +9,7 @@ const rotation = keyframes`
     }
 `;
 
-const Spinner = styled.div`
+export const Loader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,11 +21,3 @@ const Spinner = styled.div`
   height: 120px;
   animation: ${rotation} 2s linear infinite;
 `;
-
-export const Loader = () => {
-  return (
-    <>
-      <Spinner></Spinner>
-    </>
-  );
-};
