@@ -1,14 +1,12 @@
 import { styled } from "styled-components";
 
 export const MainWrapper = styled.div`
+  position: relative;
   padding: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-
-  background-color: #fff6eb;
-  border-radius: 10px;
 
   h1 {
     text-align: center;
@@ -16,6 +14,8 @@ export const MainWrapper = styled.div`
 `;
 
 export const CodeTestWrapper = styled(MainWrapper)`
+  position: absolute;
+  margin-top: 10%;
   background-color: white;
   padding: 2rem;
   border: 5px solid blanchedalmond;
