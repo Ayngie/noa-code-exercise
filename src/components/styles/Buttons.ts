@@ -1,13 +1,12 @@
 import styled from "styled-components";
-import { ButtonContentsWrapper } from "./Wrappers";
 
-interface IButtonProps {
-  symbol: string;
-  text: string;
-  className: string;
+interface IButtonsProps {
+  symbol?: string;
+  text?: string;
+  className?: string;
 }
 
-const BasicButton = styled.button`
+const Button = styled.button`
   padding: 0.5rem;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -17,28 +16,8 @@ const BasicButton = styled.button`
     cursor: pointer;
   }
 `;
-const Text = styled.span`
-  line-height: 2rem;
-  letter-spacing: 1px;
-`;
-const Symbol = styled.span`
-  line-height: 1rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-`;
 
-export const Button = ({ symbol, text, className }: IButtonProps) => {
-  return (
-    <BasicButton className={className}>
-      <ButtonContentsWrapper>
-        <Symbol>{symbol}</Symbol>
-        <Text>{text}</Text>
-      </ButtonContentsWrapper>
-    </BasicButton>
-  );
-};
-
-export const NormalButton = styled(Button)`
+export const NormalButton = styled(Button)<IButtonsProps>`
   color: black;
   background-color: white;
   border: 1px solid black;
@@ -50,9 +29,6 @@ export const NormalButton = styled(Button)`
     color: black;
     background-color: white;
     border: 1px solid black;
-  }
-  ${Symbol} {
-    transform: translateY(-2px);
   }
 `;
 
