@@ -23,8 +23,8 @@ export const CodeTestWrapper = styled(MainWrapper)`
 
   width: 60%;
   @media (max-width: 1000px) {
-    width: 80%;
-    margin-top: 20%;
+    width: 70%;
+    margin-top: 30%;
   }
 `;
 
