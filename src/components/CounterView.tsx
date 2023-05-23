@@ -14,7 +14,6 @@ export const CounterView = ({
   handleIncrement,
   handleDecrement,
 }: ICounterProps) => {
-  let shouldTranslate: boolean = true;
   return (
     <CounterRowWrapper>
       <NormalButton
@@ -24,7 +23,7 @@ export const CounterView = ({
         <ButtonContents
           symbol={"-"}
           text={"DECREMENT"}
-          shouldTranslate={shouldTranslate}></ButtonContents>
+          shouldtranslate={"true"}></ButtonContents>
       </NormalButton>
 
       <Counter count={count} />
@@ -33,7 +32,10 @@ export const CounterView = ({
         onClick={() => {
           handleIncrement();
         }}>
-        <ButtonContents symbol={"+"} text={"INCREMENT"}></ButtonContents>
+        <ButtonContents
+          symbol={"+"}
+          text={"INCREMENT"}
+          shouldtranslate={"false"}></ButtonContents>
       </PrimaryButton>
     </CounterRowWrapper>
   );

@@ -4,7 +4,7 @@ import { ButtonContentsWrapper } from "./Wrappers";
 interface IButtonContentProps {
   symbol?: string;
   text?: string;
-  shouldTranslate?: boolean;
+  shouldtranslate: string;
 }
 
 const Text = styled.span`
@@ -16,17 +16,17 @@ const Symbol = styled.span<IButtonContentProps>`
   font-size: 1.5rem;
   font-weight: bold;
   transform: ${(props: IButtonContentProps) =>
-    props.shouldTranslate ? "translateY(-2px)" : "none"};
+    props.shouldtranslate ? "translateY(-2px)" : "none"};
 `;
 
 export const ButtonContents = ({
   symbol,
   text,
-  shouldTranslate,
+  shouldtranslate,
 }: IButtonContentProps) => {
   return (
     <ButtonContentsWrapper>
-      <Symbol shouldTranslate={shouldTranslate}>{symbol}</Symbol>
+      <Symbol shouldtranslate={shouldtranslate}>{symbol}</Symbol>
       <Text>{text}</Text>
     </ButtonContentsWrapper>
   );
