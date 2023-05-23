@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { IRepo } from "../models/IRepo";
-import { CodeTestWrapper, MainWrapper } from "../styles/Wrappers";
+import { CodeTestWrapper, MainWrapper } from "./styles/Wrappers";
 import { CounterView } from "./CounterView";
-import { Loader } from "../styles/Loader";
+import { Loader } from "./styles/Loader";
 import { RepoView } from "./RepoView";
 
 export const CodeExerciseApp = () => {

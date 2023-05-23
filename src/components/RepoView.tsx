@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { IRepo } from "../models/IRepo";
-import { RepositoryContents } from "../styles/Wrappers";
+import { RepositoryContents } from "./styles/Wrappers";
 
 interface IRepoViewProps {
   repoShown: IRepo;
