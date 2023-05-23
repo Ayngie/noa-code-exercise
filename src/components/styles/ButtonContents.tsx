@@ -19,10 +19,14 @@ const Symbol = styled.span<IButtonContentProps>`
     props.shouldTranslate ? "translateY(-2px)" : "none"};
 `;
 
-export const ButtonContents = ({ symbol, text }: IButtonContentProps) => {
+export const ButtonContents = ({
+  symbol,
+  text,
+  shouldTranslate,
+}: IButtonContentProps) => {
   return (
     <ButtonContentsWrapper>
-      <Symbol>{symbol}</Symbol>
+      <Symbol shouldTranslate={shouldTranslate}>{symbol}</Symbol>
       <Text>{text}</Text>
     </ButtonContentsWrapper>
   );
