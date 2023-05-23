@@ -45,7 +45,7 @@ This is a coding exercise for applying for internship at NoA Ignite!
 ---
 
 ## Screenshot of project:
-![Demonstration of code exercise](./src/assets/CodeExercise.png?raw=true "NoA Ignite - code exercise")
+![Demonstration of NoA Ignite - code exercise](./src/assets/CodeExercise.png?raw=true "NoA Ignite - code exercise")
 
 ---
 
