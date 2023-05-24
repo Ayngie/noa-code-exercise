@@ -24,23 +24,23 @@ export const CodeExerciseApp = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [noRepo, setNoRepo] = useState<boolean>(false);
 
+  const repoNamesList = [
+    { repoName: "eslint/eslint" },
+    { repoName: "oakwood/front-end-questions" },
+    { repoName: "babel/babel" },
+    { repoName: "webpack/webpack" },
+    { repoName: "storybooks/storybook" },
+    { repoName: "facebook/react" },
+    { repoName: "reactjs/redux" },
+    { repoName: "expressjs/express" },
+  ];
+  const repoToGet: string = repoNamesList[count].repoName;
+
   useEffect(() => {
     setNoRepo(true);
     setIsLoading(true);
 
     localStorage.setItem("countfromLS", JSON.stringify(count));
-
-    const repoNamesList = [
-      { repoName: "eslint/eslint" },
-      { repoName: "oakwood/front-end-questions" },
-      { repoName: "babel/babel" },
-      { repoName: "webpack/webpack" },
-      { repoName: "storybooks/storybook" },
-      { repoName: "facebook/react" },
-      { repoName: "reactjs/redux" },
-      { repoName: "expressjs/express" },
-    ];
-    let repoToGet: string = repoNamesList[count].repoName;
 
     if (repoToGet === repoShown.full_name) {
       setNoRepo(false);
@@ -74,7 +74,7 @@ export const CodeExerciseApp = () => {
         return {};
       }
     }
-  }, [count, repoShown.full_name]);
+  }, [count, repoShown.full_name, repoToGet]);
 
   const handleIncrement = () => {
     if (count < 7) {
