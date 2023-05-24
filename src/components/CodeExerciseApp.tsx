@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { IRepo } from "../models/IRepo";
-import { CodeTestWrapper, MainWrapper } from "./styles/Wrappers";
+import {
+  CodeTestWrapper,
+  MainWrapper,
+  NotFoundWrapper,
+} from "./styles/Wrappers";
 import { CounterView } from "./CounterView";
 import { Loader } from "./styles/Loader";
 import { RepoView } from "./RepoView";
@@ -111,7 +115,10 @@ export const CodeExerciseApp = () => {
         )}
 
         {noRepo && !isLoading && (
-          <h2>Sorry! The repository "{repoToGet}"" was not found.</h2>
+          <NotFoundWrapper>
+            <h2>Not Found </h2>
+            <span>Sorry, but the repository "{repoToGet}" was not found.</span>
+          </NotFoundWrapper>
         )}
         {!noRepo && <RepoView repoShown={repoShown} />}
       </CodeTestWrapper>
