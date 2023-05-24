@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 
 export const MainWrapper = styled.div`
-  position: relative;
   padding: 3rem;
   display: flex;
   flex-direction: column;
@@ -14,8 +13,6 @@ export const MainWrapper = styled.div`
 `;
 
 export const CodeTestWrapper = styled(MainWrapper)`
-  position: absolute;
-  margin-top: 10%;
   background-color: white;
   padding: 2rem;
   border: 5px solid blanchedalmond;
@@ -24,7 +21,6 @@ export const CodeTestWrapper = styled(MainWrapper)`
   width: 60%;
   @media (max-width: 1000px) {
     width: 70%;
-    margin-top: 40%;
   }
 `;
 
