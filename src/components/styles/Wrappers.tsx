@@ -42,8 +42,6 @@ export const ButtonContentsWrapper = styled.div`
 `;
 
 export const RepositoryWrapper = styled.div`
-  font-family: Georgia, "Times New Roman", Times, serif;
-
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -6,11 +6,11 @@ interface IRepoViewProps {
   repoShown: IRepo;
 }
 
-const Title = styled.span`
-  font-weight: bold;
-`;
 const Info = styled.span`
   font-family: Georgia, "Times New Roman", Times, serif;
+`;
+const Title = styled(Info)`
+  font-weight: bold;
 `;
 
 export const RepoView = ({ repoShown }: IRepoViewProps) => {
