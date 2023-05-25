@@ -17,21 +17,21 @@ export const CodeTestWrapper = styled(MainWrapper)`
   padding: 2rem;
   border: 5px solid blanchedalmond;
   border-radius: 5px;
+  width: 70%;
 
-  width: 60%;
-  @media (max-width: 1000px) {
-    width: 70%;
+  @media (min-width: 1000px) {
+    width: 60%;
   }
 `;
 
 export const CounterRowWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
 
-  @media (max-width: 1000px) {
-    flex-direction: column;
+  @media (min-width: 1000px) {
+    flex-direction: row;
   }
 `;
 
@@ -45,10 +45,10 @@ export const RepositoryWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 90%;
 
-  width: 60%;
-  @media (max-width: 1000px) {
-    width: 90%;
+  @media (min-width: 1000px) {
+    width: 60%;
   }
 `;
 
