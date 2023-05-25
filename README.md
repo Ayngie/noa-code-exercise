@@ -5,6 +5,12 @@
 ## Short description:
 This is a coding exercise for applying for internship at NoA Ignite! 
 
+This app is built with create-react-app, and uses useState + props. 
+
+The code-exercise is the main branch. I also have two branches: 
+- A) a initiated (unfinished) project which uses useReducer + props (which is before refactoring of styled components and code in general), and 
+- B) a branch in which I will be developing using useReducer + context. Stay tuned!
+
 ### The instructions were: 
 - Build a react app showing two buttons and a counter (as shown in received mock-ups), with functionality connected to the buttons. 
 - The buttons should have a certain styling as detailed in the instructions I received, and should increase/decrease the count displayed in the counter. 
