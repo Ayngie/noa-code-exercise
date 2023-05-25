@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { IRepo } from "../models/IRepo";
 import {
   CodeTestWrapper,
@@ -9,6 +8,7 @@ import {
 import { CounterView } from "./CounterView";
 import { Loader } from "./styles/Loader";
 import { RepoView } from "./RepoView";
+import { getData } from "../services/getRepo";
 
 export const CodeExerciseApp = () => {
   const [count, setCount] = useState<number>(
@@ -55,14 +55,7 @@ export const CodeExerciseApp = () => {
 
     async function fetchData() {
       try {
-        const response = await axios.get<IRepo>(
-          `https://api.github.com/repos/${repoToGet}`
-        );
-        const newRepo: IRepo = {
-          full_name: response.data.full_name,
-          description: response.data.description,
-          stargazers_count: response.data.stargazers_count,
-        };
+        const newRepo = await getData<IRepo>(repoToGet);
 
         localStorage.setItem("repoFromLS", JSON.stringify(newRepo));
         setRepoToShow(newRepo);
