@@ -1,17 +1,18 @@
 
 ---
-# NoA Ignite - code exercise
+# Code exercise
 
 ## Short description:
-This is a coding exercise for applying for internship at NoA Ignite! 
+Counter built with create-react-app, using useState + props, and Styled Components.
 
-This app is built with create-react-app, and uses useState + props. 
+For this exercise I delved into learning Styled Components (via their docs) that were previously unfamiliar to me.
 
+### Branches
 The code-exercise is the main branch. I also have two branches: 
 - A) a initiated (unfinished) project which uses useReducer + props (which is before refactoring of styled components and code in general), and 
 - B) a branch in which I will be developing using useReducer + context. Stay tuned!
 
-### The instructions were: 
+### Instructions: 
 - Build a react app showing two buttons and a counter (as shown in received mock-ups), with functionality connected to the buttons. 
 - The buttons should have a certain styling as detailed in the instructions I received, and should increase/decrease the count displayed in the counter. 
 - The counter is connected to an array of git-repo names, and upon increasing/decreasing the count the number in the counter should correlate with the position in the array of reponames - fetching and showing some data about that repository. 
