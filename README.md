@@ -51,12 +51,6 @@ The code-exercise is the main branch. I also have two branches:
 
 ---
 
-## Screenshot of project:
-![Demonstration of NoA Ignite - code exercise](./src/assets/CodeExerciseExample.png?raw=true "NoA Ignite - code exercise")
-
----
-
-
 ## Run locally:
 
 Clone the project
